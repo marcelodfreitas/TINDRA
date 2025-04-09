@@ -22,28 +22,17 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script src="./scripts.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
-              behavior: "smooth",
-            });
-          });
-        });
-      });
-    </script>
   </head>
-  <body class="bg-gray-200 text-gray-900 font-sans">
-    <header class="p-6 !bg-gray-300 shadow-md bg-white sticky top-0 z-50">
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <header class="p-6 !bg-gray-200 shadow-md bg-white sticky top-0 z-50">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">TINDRA</h1>
+        <h1 class="text-2xl font-bold hover:text-orange-500 transition cursor-pointer">TINDRA</h1>
         <a
-          href="#cta"
-          class="bg-green-500 text-white px-4 py-2 rounded-xl shadow hover:bg-green-600 transition"
-          >Comece Agora</a
+          href="#planos"
+          class="bg-orange-500 text-white px-4 py-2 rounded-xl shadow hover:bg-orange-600 transition"
+          >Quero meu acesso</a
         >
       </div>
     </header>
@@ -57,10 +46,10 @@
     <br>
       <section class="text-center mb-12">
         <h1 class="text-4xl font-extrabold mb-4">
-          Negocie seu carro em até 5 segundos, sem enrolação
+          Negocie seu carro em até 5 segundos, sem enrolação!!
         </h1>
         <p class="text-lg text-gray-700">
-          Propostas instantâneas, direto pelo WhatsApp. IA faz a descrição para
+          Propostas instantâneas, direto pelo WhatsApp. <br> Uma <strong>IA</strong> fazendo a descrição para
           você.
         </p>
       </section>
@@ -95,7 +84,7 @@
         </div>
       </section>
 
-      <section class="bg-gray-600 p-8 rounded-2xl text-center" id="cta">
+      <section class="bg-gray-900 p-8 rounded-2xl text-center" id="cta">
         <h2 class="text-2xl font-bold mb-4 text-white">
           Garanta seu lugar na primeira versão do TINDRA
         </h2>
@@ -147,48 +136,20 @@
             spam.
           </p>
         </form>
-
-        <script>
-          function enviarWhatsApp(event) {
-            event.preventDefault();
-
-            const emailInput = document.getElementById("email");
-            const phoneInput = document.getElementById("phone");
-
-            const email = emailInput.value;
-            const phone = phoneInput.value;
-
-            const msg = encodeURIComponent(`${email} e ${phone}`);
-            window.open(`https://wa.me/5551983117180?text=${msg}`, "_blank");
-
-            // Limpa os campos após o envio
-            emailInput.value = "";
-            phoneInput.value = "";
-          }
-
-          function abrirSuporte() {
-            const numero = "5551983117180"; // Substitua pelo número do suporte
-            const mensagem = encodeURIComponent(
-              "Olá! Preciso de ajuda com o TINDRA."
-            );
-            const url = `https://wa.me/${numero}?text=${mensagem}`;
-            window.open(url, "_blank");
-          }
-        </script>
       </section>
 
       <section class="mt-16">
         <h2 class="text-2xl font-semibold mb-4 text-center">Como funciona</h2>
-        <div class="grid md:grid-cols-3 gap-6  text-center">
-          <div class="p-6 border rounded-xl bg-gray-300 hover:shadow-md cursor-pointer">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
             <span class="text-4xl">📸</span>
             <p class="font-bold mt-2">1. Envie fotos e dados do seu carro</p>
           </div>
-          <div class="p-6 border rounded-xl bg-gray-300 hover:shadow-md cursor-pointer">
+          <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
             <span class="text-4xl">🤖</span>
             <p class="font-bold mt-2">2. A IA cria a descrição pra você</p>
           </div>
-          <div class="p-6 border rounded-xl bg-gray-300 hover:shadow-md cursor-pointer">
+          <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
             <span class="text-4xl">📲</span>
             <p class="font-bold mt-2">3. Negocie direto pelo WhatsApp</p>
           </div>
@@ -201,16 +162,17 @@
         </h2>
         <div class="grid md:grid-cols-3 gap-6 text-gray-800">
           <div
-            class="bg-white border p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
+            class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
           >
             <p class="mb-4 italic">
               “Consegui vender meu carro em menos de 2 dias. O processo foi
               direto, sem enrolação!”
             </p>
-            <p class="font-semibold">– Ana C., São Paulo</p>
+            <p class="font-semibold">– Ana C., São Paulo</p><br>
+            
           </div>
           <div
-            class="bg-white border p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
+            class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
           >
             <p class="mb-4 italic">
               “A proposta pelo WhatsApp agilizou tudo. Melhor app que já usei
@@ -219,7 +181,7 @@
             <p class="font-semibold">– Carlos M., Belo Horizonte</p>
           </div>
           <div
-            class="bg-white border p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
+            class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
           >
             <p class="mb-4 italic">
               “A IA acertou em cheio na descrição do meu carro. Fiquei
@@ -248,6 +210,65 @@
             A partir de fotos e dados do veículo que você envia.
           </li>
         </ul>
+      </section>
+
+      <section id="planos" class="mt-16">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Planos e Assinaturas</h2>
+        <div class="grid md:grid-cols-3 gap-6 text-gray-800">
+          <div
+          class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
+        >
+          <p class="mb-4 font-bold text-center">
+            🟢 Plano Start – R$ 0 / mês
+          </p>
+          <p class="font-light italic text-center">Ideal para quem está começando.</p>
+          <p class="font-medium mt-4">
+            ✅ Envie e receba propostas ilimitadas <br>
+            ✅ Descrição automática via IA (básica) <br>
+            ✅ Negociação direta pelo WhatsApp <br>
+            ❌ Sem destaque nos resultados <br>
+            ❌ Sem suporte prioritário</p> <br>
+
+            <button type="submit" class="bg-gray-500 text-white px-6 py-2 w-full rounded-xl shadow transition w-80 font-bold flex items-center justify-center gap-2 text-center" disabled>Contratar</button>
+          <br>
+        </div>
+
+        <div
+          class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
+        >
+          <p class="mb-4 font-bold text-center">
+            🟡 Plano Pro – R$ 49 / mês
+          </p>
+          <p class="font-light italic text-center">Para quem quer acelerar as negociações</p>
+          <p class="font-medium mt-4">
+            ✅ Tudo do plano Start <br>
+            ✅ Destaque nas listagens por 7 dias <br>
+            ✅ IA com descrição otimizada <br>
+            ✅ Suporte via WhatsApp <br>
+            ✅ Acompanhamento de interesse <br><br>
+
+            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 w-full rounded-xl shadow transition w-80 font-bold flex items-center justify-center gap-2 text-center" >Contratar</button>
+          <br>
+        </div>
+
+        <div
+          class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
+        >
+          <p class="mb-4 font-bold text-center">
+            🔴 Plano Revenda – R$ 149 / mês
+          </p>
+          <p class="font-light italic text-center">Feito para lojas e revendedores.</p>
+          <p class="font-medium mt-4">
+            ✅ Até 20 anúncios ativos por mês. <br>
+            ✅ IA com descrição completa <br>            
+            ✅ Página personalizada da loja. <br>
+            ✅ Suporte prioritário via WhatsApp. <br>
+            ✅ Acesso a relatórios de performance. <br><br>
+
+            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 w-full rounded-xl shadow transition w-80 font-bold flex items-center justify-center gap-2 text-center">Contratar</button>
+          <br>
+        </div>
+        </div>
       </section>
 
     </main>
