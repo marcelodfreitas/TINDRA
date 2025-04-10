@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Com o TINDRA, você faz propostas em até 5 segundos. Negocie carros com pessoas ou revendas direto pelo WhatsApp. IA gera sua descrição. Simples e rápido."
+    />
+    <link rel="canonical" href="https://tindra.com.br" />
+    <link rel="alternate" hreflang="pt-br" href="https://tindra.com.br" />
+    <title>
+      TINDRA | Faça sua proposta em segundos – Troque, compre ou venda carros
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:wght@300;400&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+        .hidden {
+          display: none !important;
+        }
+    </style>
+</head>
+<body class="bg-orange-500">
+  <section class="mt-20 max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-white">Dicas, novidades e curiosidades!</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Posts -->
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">Como tirar fotos que vendem seu carro mais rápido</h3>
+        <p class="text-gray-600 mb-4">Descubra os melhores ângulos e truques para valorizar seu carro nas fotos, aumentando suas chances de venda.</p>
+        <button onclick="abrirModal('modal1')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">5 erros que fazem você perder propostas no WhatsApp</h3>
+        <p class="text-gray-600 mb-4">Evite mensagens confusas e abordagens erradas que afastam compradores em potencial.</p>
+        <button onclick="abrirModal('modal2')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">Como funciona a avaliação automática do seu carro com IA?</h3>
+        <p class="text-gray-600 mb-4">Entenda como a inteligência artificial do TINDRA usa dados e fotos para gerar descrições e precificações em segundos.</p>
+        <button onclick="abrirModal('modal3')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">Checklist completo antes de anunciar seu carro</h3>
+        <p class="text-gray-600 mb-4">Veja tudo o que você precisa preparar antes de colocar seu carro à venda — desde documentos até limpeza.</p>
+        <button onclick="abrirModal('modal4')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">Como negociar com segurança no WhatsApp.</h3>
+        <p class="text-gray-600 mb-4">Dicas práticas para identificar golpes, conversar com seriedade e fechar bons negócios direto no app.</p>
+        <button onclick="abrirModal('modal5')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">Qual a melhor hora do ano para vender seu carro?</h3>
+        <p class="text-gray-600 mb-4">Descubra os meses com maior demanda e como isso pode influenciar o valor de mercado do seu veículo.</p>
+        <button onclick="abrirModal('modal6')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">Carro usado ou seminovo: qual a diferença e qual compensa mais?</h3>
+        <p class="text-gray-600 mb-4">Veja os prós e contras de cada opção, e saiba como identificar um bom negócio.</p>
+        <button onclick="abrirModal('modal7')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">Quanto vale o seu carro? Ferramentas para descobrir o preço justo</h3>
+        <p class="text-gray-600 mb-4">Aprenda a usar a tabela Fipe e outras referências para saber o valor real do seu carro na hora de negociar.</p>
+        <button onclick="abrirModal('modal8')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+
+      <div class="bg-white border rounded-2xl shadow hover:shadow-lg p-6 transition">
+        <h3 class="text-xl font-semibold mb-2">O que observar ao comprar um carro de pessoa física?</h3>
+        <p class="text-gray-600 mb-4">Documentação, histórico, quilometragem, revisões e outros pontos que você precisa conferir antes de fechar negócio direto com o dono.</p>
+        <button onclick="abrirModal('modal9')" class="text-orange-500 font-semibold hover:underline">Ler mais</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="flex justify-center"  >
+  <a href="index.html"><button class="bg-gray-500 text-center mx-auto my-4 w-40 text-white px-4 py-2 rounded-xl shadow hover:bg-gray-700 transition">Voltar</button></a>
+</div>
+
+  <!-- Modais -->
+  <div id="modais">
+    <!-- Geração automática via script ou template para modais de 1 a 9 -->
+    <script>
+      const modaisInfo = [
+        {
+          id: 1,
+          titulo: "Como tirar fotos que vendem seu carro mais rápido",
+          conteudo: "Fotos com boa iluminação, ângulos que mostram o interior e exterior, e um fundo neutro aumentam a atratividade do anúncio. Mostre detalhes como painel, rodas, e bancos. Evite fotos tremidas e escuras."
+        },
+        {
+          id: 2,
+          titulo: "5 erros que fazem você perder propostas no WhatsApp",
+          conteudo: "Não responder rápido, usar mensagens genéricas, não passar confiança ou transparência e erros de português afastam possíveis compradores. Comunicação clara e empática aumenta suas chances."
+        },
+        {
+          id: 3,
+          titulo: "Como funciona a avaliação automática do seu carro com IA?",
+          conteudo: "A IA analisa fotos, histórico de mercado, modelos similares e condições do carro para gerar descrições e precificação precisas, agilizando seu anúncio em segundos."
+        },
+        {
+          id: 4,
+          titulo: "Checklist completo antes de anunciar seu carro",
+          conteudo: "Veja tudo o que você precisa preparar antes de colocar seu carro à venda — desde documentos até limpeza."
+        },
+        {
+          id: 5,
+          titulo: "Como negociar com segurança no WhatsApp.",
+          conteudo: "Evite links suspeitos, peça vídeos ou áudios do veículo, e mantenha a negociação dentro do WhatsApp para mais segurança e rastreabilidade."
+        },
+        {
+          id: 6,
+          titulo: "Qual a melhor hora do ano para vender seu carro?",
+          conteudo: "Os meses de janeiro, março e agosto costumam ter maior procura. Evite dezembro e fevereiro, que têm menor volume de vendas."
+        },
+        {
+          id: 7,
+          titulo: "Carro usado ou seminovo: qual a diferença e qual compensa mais?",
+          conteudo: "Seminovos têm menor depreciação e costumam estar em melhor estado. Usados são mais baratos, mas exigem atenção redobrada."
+        },
+        {
+          id: 8,
+          titulo: "Quanto vale o seu carro? Ferramentas para descobrir o preço justo",
+          conteudo: "Use a Tabela Fipe como base, mas consulte também sites de vendas para comparar com carros similares na sua região."
+        },
+        {
+          id: 9,
+          titulo: "O que observar ao comprar um carro de pessoa física?",
+          conteudo: "Verifique documentação, histórico de revisões, quilometragem e se há pendências judiciais ou financeiras."
+        },
+      ];
+
+      modaisInfo.forEach(({ id, titulo, conteudo }) => {
+        document.write(`
+          <div id="modal${id}" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white p-6 rounded-2xl max-w-lg w-full relative shadow-lg">
+              <button onclick="fecharModal('modal${id}')" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl font-bold">&times;</button>
+              <h2 class="text-xl font-bold mb-4">${titulo}</h2>
+              <p class="text-gray-700">${conteudo}</p>
+            </div>
+          </div>
+        `);
+      });
+    </script>
+  </div>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./scripts.js" defer></script>
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: true
+      }
+    }
+  </script>
+</body>
+</html>
