@@ -14,10 +14,10 @@
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:wght@300;400&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
-    />
+    /> -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -63,9 +63,8 @@
       <!-- Menu (mobile only) -->
       <nav id="menu" class="md:hidden hidden mt-4">
         <div class="flex flex-row gap-4 items-center">
-          <a href="#home" class="text-orange-500 font-bold">Home</a>
+          <a href="#home" class="font-semibold text-orange-500 font-bold">Home</a>
           <a href="#cta" class="font-semibold hover:text-orange-500">Reserva</a>
-          <a href="#how" class="font-semibold hover:text-orange-500">Como funciona</a>
           <a href="#avaliacoes" class="font-semibold hover:text-orange-500">Avaliações</a>
           <a href="#perguntas" class="font-semibold hover:text-orange-500">Dúvidas</a>
           <a href="blog.html" class="font-semibold hover:text-orange-500">Blog</a>
@@ -145,8 +144,10 @@
             required
           />
           <input
-            type="phone"
+            type="tel"
             id="phone"
+            pattern="[0-9]{10,11}"
+            inputmode="numeric"
             class="w-full border rounded-xl p-3"
             placeholder="Seu Whatsapp (para receber avisos direto no celular)"
             required
@@ -161,7 +162,7 @@
           
           <button
             onclick="abrirSuporte()"
-            type="submit"
+            type="button"
             id="suporte"
             class="bg-green-500 text-white px-6 py-2 w-full rounded-xl shadow hover:bg-green-700 transition w-80 font-bold flex items-center justify-center gap-2 text-center"
           >

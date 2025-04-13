@@ -35,34 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.open(url, "_blank");
   }
 
-  function abrirModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-      console.log(`Abrindo modal: ${id}`);
-      modal.classList.remove("hidden");
-    } else {
-      console.warn(`Modal com ID '${id}' não encontrado.`);
-    }
-  }
-
-  function fecharModal(id) {
-    document.getElementById(id).classList.add('hidden');
-  }
-
-  window.addEventListener("click", function (e) {
-    document.querySelectorAll(".modal").forEach((modal) => {
-      const conteudo = modal.querySelector("div");
   
-      // Garante que o clique foi fora do conteúdo e do botão que abre o modal
-      if (
-        !conteudo.contains(e.target) &&
-        !modal.classList.contains("hidden") &&
-        !e.target.matches("button[onclick^='abrirModal']")
-      ) {
-        modal.classList.add("hidden");
-      }
-    });
-  });
   
   document.getElementById("menu-toggle").addEventListener("click", function () {
     const menu = document.getElementById("menu");
