@@ -22,7 +22,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css">
+    
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
@@ -33,19 +33,22 @@
 
     <!-- Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal1')">
+      <a target="_blank" href="modal1.html"><div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition">
         <h3 class="text-lg font-semibold mb-2">Como tirar fotos que vendem seu carro mais rápido</h3>
-        <!-- <p class="text-sm text-gray-600">Descubra os melhores ângulos e truques para valorizar seu carro.</p> -->
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal2')">
+      </div></a>
+
+      <a target="_blank" href="modal2.html"><div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal2')">
         <h3 class="text-lg font-semibold mb-2">5 erros que fazem você perder propostas no WhatsApp</h3>
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal3')">
+      </div></a>
+
+      <a target="_blank" href="modal3.html"><div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal3')">
         <h3 class="text-lg font-semibold mb-2">Como funciona a avaliação automática do seu carro com IA?</h3>
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal4')">
+      </div></a>
+
+      <a target="_blank" href="modal4.html"><div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal4')">
         <h3 class="text-lg font-semibold mb-2">Checklist completo antes de anunciar seu carro</h3>
-      </div>
+      </div></a>
+      
       <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal5')">
         <h3 class="text-lg font-semibold mb-2">Como negociar com segurança no WhatsApp</h3>
       </div>
@@ -64,155 +67,8 @@
     </div>
   </div>
   
-  <!-- Modal 1 -->
-  <!-- Modal 1 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal1">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Como tirar fotos que vendem seu carro mais rápido</h2>
-        <p>Use a luz natural, prefira horários como início da manhã ou fim da tarde. Fotografe o carro limpo, em um ambiente neutro. Mostre ângulos frontais, laterais, traseiros, interior e painel. Capriche na qualidade da imagem.</p>
-      </div>
-    </div>
-  </div>
-</div>
+ 
 
-<!-- Modal 2 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal2">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal2.png" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">5 erros que fazem você perder propostas no WhatsApp</h2>
-        <ul class="list-disc pl-5 text-left space-y-1">
-          <li>Demorar para responder</li>
-          <li>Não enviar fotos claras</li>
-          <li>Ser muito informal</li>
-          <li>Não informar o preço</li>
-          <li>Passar desconfiança</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 3 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal3">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal3.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Como funciona a avaliação automática do seu carro com IA?</h2>
-        <p>Com base no modelo, ano, versão, estado de conservação e mercado local, a IA compara com milhares de anúncios e vendas para sugerir um preço competitivo.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 4 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal4">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal4.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Checklist completo antes de anunciar seu carro</h2>
-        <ul class="list-disc pl-5 text-left space-y-1">
-          <li>Fotos de qualidade</li>
-          <li>Preço competitivo</li>
-          <li>IPVA em dia</li>
-          <li>Documentação ok</li>
-          <li>Limpeza e manutenção em dia</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 5 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal5">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal5.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Como negociar com segurança no WhatsApp</h2>
-        <p>Evite passar dados pessoais logo de início. Prefira marcar encontros em locais públicos. Desconfie de propostas muito acima do valor pedido. Use contratos e recibos na negociação.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 6 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal6">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal6.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Qual a melhor hora do ano para vender seu carro?</h2>
-        <p>Janeiro, março e agosto são bons meses, com maior procura por veículos usados. Evite dezembro e épocas com feriados longos, quando há menos compradores ativos.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 7 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal7">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal7.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Carro usado ou seminovo: qual a diferença e qual compensa mais?</h2>
-        <p>Seminovo tem até 3 anos de uso e quilometragem baixa, geralmente com menos desgaste. Usado pode ser mais antigo, mais barato, mas exige mais atenção na análise.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 8 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal8">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal8.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Quanto vale o seu carro? Ferramentas para descobrir o preço justo</h2>
-        <p>Use plataformas como Webmotors, OLX, Tabela Fipe e o próprio Tindra para comparar preços de veículos semelhantes e definir um valor realista.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 9 -->
-<div class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50" data-modal="modal9">
-  <div class="relative w-full max-w-lg h-[400px] rounded-2xl overflow-hidden">
-    <img src="./imgs/modal9.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
-    <div class="relative z-20 h-full flex items-center justify-center text-white text-center px-6">
-      <button class="absolute top-2 right-2 text-white text-2xl closeModalBtn z-30">&times;</button>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">O que observar ao comprar um carro de pessoa física?</h2>
-        <p>Verifique histórico do veículo, documentação, quilometragem real, vestígios de batidas, funcionamento geral, e se possível leve a um mecânico de confiança.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- Fim dos modais -->
 
   <div id="scrollButton" class="fixed bottom-20 w-full flex justify-center">
     <a href="index.html">
