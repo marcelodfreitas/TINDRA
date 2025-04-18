@@ -20,73 +20,67 @@
   <div class="flex justify-center items-center space-x-4 my-6">
     <button id="prevBtn" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50" disabled>Anterior</button>
     <span id="pageIndicator" class="font-medium text-gray-700">Página 1</span>
-    <button id="nextBtn" class="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600">Próxima</button>
+    <button id="nextBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Próxima</button>
   </div>
 
   <script>
-    const API_KEY = 'c7db1e5058704d529d4d7c48c1a0a927'; // Substitua pela sua chave
-    const pageSize = 9;
+    const API_KEY = 'c7db1e5058704d529d4d7c48c1a0a927';
     let currentPage = 1;
-
     const container = document.getElementById('news-container');
-    const pageIndicator = document.getElementById('pageIndicator');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
+  
     function loadNews(page = 1) {
-      container.innerHTML = '<p class="col-span-full text-center">Carregando...</p>';
-
-      fetch(`https://newsapi.org/v2/everything?q=carros&language=pt&sortBy=publishedAt&pageSize=${pageSize}&page=${page}&apiKey=${API_KEY}`)
+      container.innerHTML = '<p class="col-span-full text-center text-gray-600">Carregando...</p>';
+  
+      fetch(`https://newsapi.org/v2/everything?q=carros&apiKey=${API_KEY}&page=${page}&pageSize=9`)
         .then(res => res.json())
         .then(data => {
-          container.innerHTML = ''; // limpa antes de inserir
-
           if (!data.articles || data.articles.length === 0) {
             container.innerHTML = '<p class="col-span-full text-center text-gray-600">Nenhuma notícia encontrada.</p>';
             return;
           }
-
+  
+          container.innerHTML = '';
           data.articles.forEach(article => {
             const card = document.createElement('div');
             card.className = "bg-white rounded-lg overflow-hidden shadow-md flex flex-col";
-
             card.innerHTML = `
               <img src="${article.urlToImage || 'https://via.placeholder.com/400x200?text=Sem+Imagem'}" class="w-full h-48 object-cover" alt="Imagem da notícia">
               <div class="p-4 flex flex-col flex-grow">
                 <h2 class="text-lg font-semibold mb-2">${article.title}</h2>
                 <p class="text-sm text-gray-600 flex-grow">${article.description || 'Sem descrição disponível.'}</p>
-                <a href="${article.url}" target="_blank" class="mt-4 inline-block bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 text-sm text-center">
+                <a href="${article.url}" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm text-center">
                   Ler mais
                 </a>
               </div>
             `;
             container.appendChild(card);
           });
-
-          // Atualiza controles de paginação
-          currentPage = page;
-          pageIndicator.textContent = `Página ${currentPage}`;
+  
+          // Navegação
           prevBtn.disabled = currentPage === 1;
+          nextBtn.disabled = currentPage >= data.totalResults / 10; // Limite de 10 por página
         })
         .catch(error => {
           console.error('Erro ao carregar notícias:', error);
           container.innerHTML = `<p class="text-red-600 col-span-full text-center">Erro ao carregar notícias.</p>`;
         });
     }
-
+  
     prevBtn.addEventListener('click', () => {
       if (currentPage > 1) {
         loadNews(currentPage - 1);
       }
     });
-
+  
     nextBtn.addEventListener('click', () => {
       loadNews(currentPage + 1);
     });
-
-    // Inicial
+  
     loadNews(currentPage);
   </script>
+  
+  
+  
 
 </body>
 </html>
