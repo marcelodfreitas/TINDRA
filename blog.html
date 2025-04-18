@@ -1,139 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Com o TINDRA, você faz propostas em até 5 segundos. Negocie carros com pessoas ou revendas direto pelo WhatsApp. IA gera sua descrição. Simples e rápido."
-    />
-    <link rel="canonical" href="https://tindra.com.br" />
-    <link rel="alternate" hreflang="pt-br" href="https://tindra.com.br" />
-    <title>
-      TINDRA | Faça sua proposta em segundos – Troque, compre ou venda carros
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:wght@300;400&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog de Carros</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
-  <header class=" bg-white shadow-md sticky top-0">
-    <div class="max-w-6xl mx-auto py-5 px-4">
-    <h1 class="text-2xl font-bold text-center mb-1 hover:text-orange-500 cursor-pointer">DICAS PARA VENDER SEU CARRO</h1>
-  </header><br><br>
+<body class="bg-gray-100 font-sans">
 
-    <!-- Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-      <a target="_blank" href="modal1.html"><div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition">
-        <h3 class="text-lg font-semibold mb-2">Como tirar fotos que vendem seu carro mais rápido</h3>
-      </div></a>
+  <header class="bg-white shadow p-4 text-center text-2xl font-bold text-gray-800">
+    🚗 Blog Automotivo - Últimas Notícias
+  </header>
 
-      <a target="_blank" href="modal2.html"><div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal2')">
-        <h3 class="text-lg font-semibold mb-2">5 erros que fazem você perder propostas no WhatsApp</h3>
-      </div></a>
+  <main id="news-container" class="max-w-5xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Notícias aqui -->
+  </main>
 
-      <a target="_blank" href="modal3.html"><div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal3')">
-        <h3 class="text-lg font-semibold mb-2">Como funciona a avaliação automática do seu carro com IA?</h3>
-      </div></a>
-
-      <a target="_blank" href="modal4.html"><div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal4')">
-        <h3 class="text-lg font-semibold mb-2">Checklist completo antes de anunciar seu carro</h3>
-      </div></a>
-      
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal5')">
-        <h3 class="text-lg font-semibold mb-2">Como negociar com segurança no WhatsApp</h3>
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal6')">
-        <h3 class="text-lg font-semibold mb-2">Qual a melhor hora do ano para vender seu carro?</h3>
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal7')">
-        <h3 class="text-lg font-semibold mb-2">Carro usado ou seminovo: qual a diferença e qual compensa mais?</h3>
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal8')">
-        <h3 class="text-lg font-semibold mb-2">Quanto vale o seu carro? Ferramentas para descobrir o preço justo</h3>
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md cursor-pointer hover:shadow-xl transition" onclick="abrirModal('modal9')">
-        <h3 class="text-lg font-semibold mb-2">O que observar ao comprar um carro de pessoa física?</h3>
-      </div>
-    </div>
+  <!-- Paginação -->
+  <div class="flex justify-center items-center space-x-4 my-6">
+    <button id="prevBtn" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50" disabled>Anterior</button>
+    <span id="pageIndicator" class="font-medium text-gray-700">Página 1</span>
+    <button id="nextBtn" class="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600">Próxima</button>
   </div>
-  
- 
 
-
-  <div id="scrollButton" class="fixed bottom-20 w-full flex justify-center">
-    <a href="index.html">
-      <button class="flex justify-center items-center bg-gray-600 text-white rounded w-20 hover:text-orange-500 h-9 text-light" type="button">Voltar</button>
-    </a>
-  </div>
-  
-  <footer
-      class="bg-white border-t mt-16 p-6 text-center text-sm text-gray-500">
-      © 2025 TINDRA. Todos os direitos reservados.
-    </footer>
-
-  <!-- Script -->
   <script>
-    function abrirModal(modalId) {
-      document.querySelectorAll('.modal').forEach(modal => {
-        if (modal.dataset.modal === modalId) {
-          modal.classList.remove('hidden');
-        }
-      });
-    }
+    const API_KEY = 'c7db1e5058704d529d4d7c48c1a0a927'; // Substitua pela sua chave
+    const pageSize = 9;
+    let currentPage = 1;
 
-    document.querySelectorAll('.closeModalBtn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.modal').forEach(modal => {
-          modal.classList.add('hidden');
+    const container = document.getElementById('news-container');
+    const pageIndicator = document.getElementById('pageIndicator');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function loadNews(page = 1) {
+      container.innerHTML = '<p class="col-span-full text-center">Carregando...</p>';
+
+      fetch(`https://newsapi.org/v2/everything?q=carros&language=pt&sortBy=publishedAt&pageSize=${pageSize}&page=${page}&apiKey=${API_KEY}`)
+        .then(res => res.json())
+        .then(data => {
+          container.innerHTML = ''; // limpa antes de inserir
+
+          if (!data.articles || data.articles.length === 0) {
+            container.innerHTML = '<p class="col-span-full text-center text-gray-600">Nenhuma notícia encontrada.</p>';
+            return;
+          }
+
+          data.articles.forEach(article => {
+            const card = document.createElement('div');
+            card.className = "bg-white rounded-lg overflow-hidden shadow-md flex flex-col";
+
+            card.innerHTML = `
+              <img src="${article.urlToImage || 'https://via.placeholder.com/400x200?text=Sem+Imagem'}" class="w-full h-48 object-cover" alt="Imagem da notícia">
+              <div class="p-4 flex flex-col flex-grow">
+                <h2 class="text-lg font-semibold mb-2">${article.title}</h2>
+                <p class="text-sm text-gray-600 flex-grow">${article.description || 'Sem descrição disponível.'}</p>
+                <a href="${article.url}" target="_blank" class="mt-4 inline-block bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 text-sm text-center">
+                  Ler mais
+                </a>
+              </div>
+            `;
+            container.appendChild(card);
+          });
+
+          // Atualiza controles de paginação
+          currentPage = page;
+          pageIndicator.textContent = `Página ${currentPage}`;
+          prevBtn.disabled = currentPage === 1;
+        })
+        .catch(error => {
+          console.error('Erro ao carregar notícias:', error);
+          container.innerHTML = `<p class="text-red-600 col-span-full text-center">Erro ao carregar notícias.</p>`;
         });
-      });
-    });
-
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.addEventListener('click', e => {
-        if (e.target === modal) {
-          modal.classList.add('hidden');
-        }
-      });
-    });
-
-     // Seleciona o botão pelo ID
-  const scrollButton = document.getElementById('scrollButton');
-
-// Função para controlar a visibilidade do botão
-function handleScroll() {
-  // Verifica se a largura da tela é menor que 640px (mobile, equivalente a 'sm' no Tailwind)
-  if (window.innerWidth < 640) {
-    // No mobile, o botão aparece ao rolar mais de 100px
-    if (window.scrollY > 450) {
-      scrollButton.classList.remove('hidden');
-    } else {
-      scrollButton.classList.add('hidden');
     }
-  } else {
-    // No desktop (telas >= 640px), o botão está sempre visível
-    scrollButton.classList.remove('hidden');
-  }
-}
 
-// Adiciona o evento de scroll
-window.addEventListener('scroll', handleScroll);
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        loadNews(currentPage - 1);
+      }
+    });
 
-// Adiciona o evento de resize para ajustar o comportamento ao redimensionar a tela
-window.addEventListener('resize', handleScroll);
+    nextBtn.addEventListener('click', () => {
+      loadNews(currentPage + 1);
+    });
 
-// Executa a função ao carregar a página para verificar o estado inicial
-handleScroll();
+    // Inicial
+    loadNews(currentPage);
   </script>
 
 </body>
