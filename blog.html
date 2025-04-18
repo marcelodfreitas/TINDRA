@@ -32,38 +32,41 @@
       container.innerHTML = '<p class="col-span-full text-center text-gray-600">Carregando...</p>';
   
       fetch(`https://newsapi.org/v2/everything?q=carros&apiKey=${API_KEY}&page=${page}&pageSize=9`)
-        .then(res => res.json())
-        .then(data => {
-          if (!data.articles || data.articles.length === 0) {
-            container.innerHTML = '<p class="col-span-full text-center text-gray-600">Nenhuma notícia encontrada.</p>';
-            return;
-          }
-  
-          container.innerHTML = '';
-          data.articles.forEach(article => {
-            const card = document.createElement('div');
-            card.className = "bg-white rounded-lg overflow-hidden shadow-md flex flex-col";
-            card.innerHTML = `
-              <img src="${article.urlToImage || 'https://via.placeholder.com/400x200?text=Sem+Imagem'}" class="w-full h-48 object-cover" alt="Imagem da notícia">
-              <div class="p-4 flex flex-col flex-grow">
-                <h2 class="text-lg font-semibold mb-2">${article.title}</h2>
-                <p class="text-sm text-gray-600 flex-grow">${article.description || 'Sem descrição disponível.'}</p>
-                <a href="${article.url}" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm text-center">
-                  Ler mais
-                </a>
-              </div>
-            `;
-            container.appendChild(card);
-          });
-  
-          // Navegação
-          prevBtn.disabled = currentPage === 1;
-          nextBtn.disabled = currentPage >= data.totalResults / 10; // Limite de 10 por página
-        })
-        .catch(error => {
-          console.error('Erro ao carregar notícias:', error);
-          container.innerHTML = `<p class="text-red-600 col-span-full text-center">Erro ao carregar notícias.</p>`;
-        });
+      .then(res => res.json())
+.then(data => {
+  console.log('🧾 Resposta da API:', data); // Adicionando o log para verificar a resposta
+
+  if (!data.articles || data.articles.length === 0) {
+    container.innerHTML = '<p class="col-span-full text-center text-gray-600">Nenhuma notícia encontrada.</p>';
+    return;
+  }
+
+  container.innerHTML = '';
+  data.articles.forEach(article => {
+    const card = document.createElement('div');
+    card.className = "bg-white rounded-lg overflow-hidden shadow-md flex flex-col";
+
+    card.innerHTML = `
+      <img src="${article.urlToImage || 'https://via.placeholder.com/400x200?text=Sem+Imagem'}" class="w-full h-48 object-cover" alt="Imagem da notícia">
+      <div class="p-4 flex flex-col flex-grow">
+        <h2 class="text-lg font-semibold mb-2">${article.title}</h2>
+        <p class="text-sm text-gray-600 flex-grow">${article.description || 'Sem descrição disponível.'}</p>
+        <a href="${article.url}" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm text-center">
+          Ler mais
+        </a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage >= data.totalResults / 10; // Limite de 10 por página
+})
+.catch(error => {
+  console.error('Erro ao carregar notícias:', error);
+  container.innerHTML = `<p class="text-red-600 col-span-full text-center">Erro ao carregar notícias.</p>`;
+});
+
     }
   
     prevBtn.addEventListener('click', () => {
