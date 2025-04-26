@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog de Carros</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 font-sans">
 
   <header class="bg-white shadow p-4 text-center text-2xl font-bold text-gray-800">
@@ -18,7 +20,8 @@
 
   <!-- Paginação -->
   <div class="flex justify-center items-center space-x-4 my-6">
-    <button id="prevBtn" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50" disabled>Anterior</button>
+    <button id="prevBtn" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50"
+      disabled>Anterior</button>
     <span id="pageIndicator" class="font-medium text-gray-700">Página 1</span>
     <button id="nextBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Próxima</button>
   </div>
@@ -27,26 +30,26 @@
     const API_KEY = 'c7db1e5058704d529d4d7c48c1a0a927';
     let currentPage = 1;
     const container = document.getElementById('news-container');
-  
+
     function loadNews(page = 1) {
       container.innerHTML = '<p class="col-span-full text-center text-gray-600">Carregando...</p>';
-  
+
       fetch(`https://newsapi.org/v2/everything?q=carros&apiKey=${API_KEY}&page=${page}&pageSize=9`)
-      .then(res => res.json())
-.then(data => {
-  console.log('🧾 Resposta da API:', data); // Adicionando o log para verificar a resposta
+        .then(res => res.json())
+        .then(data => {
+          console.log('🧾 Resposta da API:', data); // Adicionando o log para verificar a resposta
 
-  if (!data.articles || data.articles.length === 0) {
-    container.innerHTML = '<p class="col-span-full text-center text-gray-600">Nenhuma notícia encontrada.</p>';
-    return;
-  }
+          if (!data.articles || data.articles.length === 0) {
+            container.innerHTML = '<p class="col-span-full text-center text-gray-600">Nenhuma notícia encontrada.</p>';
+            return;
+          }
 
-  container.innerHTML = '';
-  data.articles.forEach(article => {
-    const card = document.createElement('div');
-    card.className = "bg-white rounded-lg overflow-hidden shadow-md flex flex-col";
+          container.innerHTML = '';
+          data.articles.forEach(article => {
+            const card = document.createElement('div');
+            card.className = "bg-white rounded-lg overflow-hidden shadow-md flex flex-col";
 
-    card.innerHTML = `
+            card.innerHTML = `
       <img src="${article.urlToImage || 'https://via.placeholder.com/400x200?text=Sem+Imagem'}" class="w-full h-48 object-cover" alt="Imagem da notícia">
       <div class="p-4 flex flex-col flex-grow">
         <h2 class="text-lg font-semibold mb-2">${article.title}</h2>
@@ -56,34 +59,35 @@
         </a>
       </div>
     `;
-    container.appendChild(card);
-  });
+            container.appendChild(card);
+          });
 
-  prevBtn.disabled = currentPage === 1;
-  nextBtn.disabled = currentPage >= data.totalResults / 10; // Limite de 10 por página
-})
-.catch(error => {
-  console.error('Erro ao carregar notícias:', error);
-  container.innerHTML = `<p class="text-red-600 col-span-full text-center">Erro ao carregar notícias.</p>`;
-});
+          prevBtn.disabled = currentPage === 1;
+          nextBtn.disabled = currentPage >= data.totalResults / 10; // Limite de 10 por página
+        })
+        .catch(error => {
+          console.error('Erro ao carregar notícias:', error);
+          container.innerHTML = `<p class="text-red-600 col-span-full text-center">Erro ao carregar notícias.</p>`;
+        });
 
     }
-  
+
     prevBtn.addEventListener('click', () => {
       if (currentPage > 1) {
         loadNews(currentPage - 1);
       }
     });
-  
+
     nextBtn.addEventListener('click', () => {
       loadNews(currentPage + 1);
     });
-  
+
     loadNews(currentPage);
   </script>
-  
-  
-  
+
+
+
 
 </body>
+
 </html>
