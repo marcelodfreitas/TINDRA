@@ -1,256 +1,220 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Com o TINDRA, você faz propostas em até 5 segundos. Negocie carros com pessoas ou revendas direto pelo WhatsApp. IA gera sua descrição. Simples e rápido."
-    />
-    <link rel="canonical" href="https://tindra.com.br" />
-    <link rel="alternate" hreflang="pt-br" href="https://tindra.com.br" />
-    <title>
-      TINDRA | Faça sua proposta em segundos – Troque, compre ou venda carros
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Com o TINDRA, você faz propostas em até 5 segundos. Negocie carros com pessoas ou revendas direto pelo WhatsApp. IA gera sua descrição. Simples e rápido." />
+  <link rel="canonical" href="https://tindra.com.br" />
+  <link rel="alternate" hreflang="pt-br" href="https://tindra.com.br" />
+  <title>
+    TINDRA | Faça sua proposta em segundos – Troque, compre ou venda carros
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- <link
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:wght@300;400&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     /> -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-   
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-  </head>
-  <body class="bg-gray-100 text-gray-900 font-sans">
-    <header class="p-6 bg-white shadow-md sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto flex justify-between items-center relative">
-        <!-- Logo -->
-        <h1 class="text-2xl font-bold hover:text-orange-500 transition cursor-pointer">
-          TINDRA
-        </h1>
-    
-        <!-- Menu (desktop) -->
-        <nav class="hidden md:flex gap-6 items-center">
-          <a href="#home" class="text-orange-500 font-bold">Home</a>
-          <a href="#cta" class="font-semibold hover:text-orange-500">Reserva</a>
-          <a href="#how" class="font-semibold hover:text-orange-500">Como funciona</a>
-          <a href="#avaliacoes" class="font-semibold hover:text-orange-500">Avaliações</a>
-          <a href="#perguntas" class="font-semibold hover:text-orange-500">Dúvidas</a>
-          <a href="dicas.html" class="font-semibold hover:text-orange-500">Blog</a>
-        </nav>
-    
-        <!-- Botão Acesso + Hamburguer -->
-        <div class="flex items-center gap-4">
-          <!-- Botão (visível em todas telas) -->
-          <a
-            href="#cta"
-            class="bg-orange-500 text-white px-4 py-2 rounded-xl shadow hover:bg-orange-600 transition whitespace-nowrap"
-          >
-            Quero meu acesso
-          </a>
-    
-          <!-- Hamburguer (mobile only) -->
-          <button id="menu-toggle" class="md:hidden text-3xl text-gray-700 focus:outline-none">
-            &#9776;
-          </button>
+
+</head>
+
+<body class="bg-gray-100 text-gray-900 font-sans">
+  <header class="p-6 bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center relative">
+      <!-- Logo -->
+      <h1 class="text-2xl font-bold hover:text-orange-500 transition cursor-pointer">
+        TINDRA
+      </h1>
+
+      <!-- Menu (desktop) -->
+      <nav class="hidden md:flex gap-6 items-center">
+        <a href="#home" class="text-orange-500 font-bold">Home</a>
+        <a href="#cta" class="font-semibold hover:text-orange-500">Reserva</a>
+        <a href="#how" class="font-semibold hover:text-orange-500">Como funciona</a>
+        <a href="#avaliacoes" class="font-semibold hover:text-orange-500">Avaliações</a>
+        <a href="#perguntas" class="font-semibold hover:text-orange-500">Dúvidas</a>
+        <a href="blog.html" class="font-semibold hover:text-orange-500">Blog</a>
+      </nav>
+
+      <!-- Botão Acesso + Hamburguer -->
+      <div class="flex items-center gap-4">
+        <!-- Botão (visível em todas telas) -->
+        <a href="#cta"
+          class="bg-orange-500 text-white px-4 py-2 rounded-xl shadow hover:bg-orange-600 transition whitespace-nowrap">
+          Quero meu acesso
+        </a>
+
+        <!-- Hamburguer (mobile only) -->
+        <button id="menu-toggle" class="md:hidden text-3xl text-gray-700 focus:outline-none">
+          &#9776;
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu (mobile only) -->
+    <nav id="menu" class="md:hidden hidden mt-4">
+      <div class="flex justify-center flex-row gap-5 items-center">
+        <a href="#home" class="font-semibold text-orange-500 font-bold">Home</a>
+        <a href="#cta" class="font-semibold hover:text-orange-500">Reserva</a>
+        <a href="#avaliacoes" class="font-semibold hover:text-orange-500">Avaliações</a>
+        <a href="#perguntas" class="font-semibold hover:text-orange-500">Dúvidas</a>
+        <a href="blog.html" class="font-semibold hover:text-orange-500">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <img src="./imgs/logopng.png" class="w-40 flex justify-center m-auto" alt="" />
+    <br>
+    <section id="home" class="text-center mb-12">
+      <h1 class="text-4xl font-extrabold mb-4">
+        Negocie seu carro em até 5 segundos, sem enrolação!!
+      </h1>
+      <p class="text-lg text-gray-700">
+        Propostas instantâneas, direto pelo WhatsApp. <br> Uma <strong>IA</strong> fazendo a descrição para
+        você.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="p-6 border bg-white rounded-2xl shadow transition hover:shadow-lg">
+        <h2 class="text-xl font-semibold mb-2">
+          Troque, compre ou venda direto com o dono – ou com revendas
+        </h2>
+        <p class="text-gray-600">
+          Negocie com pessoas reais ou revendas homologadas em um ambiente
+          rápido e seguro.
+        </p>
+      </div>
+      <div class="p-6 border bg-white rounded-2xl shadow transition hover:shadow-lg">
+        <h2 class="text-xl font-semibold mb-2">
+          Proposta instantânea via WhatsApp
+        </h2>
+        <p class="text-gray-600">
+          Receba ou envie propostas em segundos. Nada de formulários infinitos
+          ou cadastro obrigatório.
+        </p>
+      </div>
+      <div class="p-6 border bg-white rounded-2xl shadow transition hover:shadow-lg">
+        <h2 class="text-xl font-semibold mb-2">
+          Descrição automática com IA
+        </h2>
+        <p class="text-gray-600">
+          A Inteligência Artificial gera a descrição completa do seu carro com
+          base nas fotos e informações.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-gray-900 p-8 rounded-2xl text-center" id="cta">
+      <h2 class="text-2xl font-bold mb-4 text-white">
+        Garanta seu lugar na primeira versão do TINDRA
+      </h2>
+      <p class="text-gray-700 mb-6 text-white">
+        O TINDRA vai revolucionar a forma de negociar carros no Brasil.
+        <br />Deixe seu e-emai e seja um dos primeiros a ter acesso à versão
+        de lançamento. <br />
+        Quem entrar na lista recebe benefícios antecipados e pode até testar o
+        app antes de todo mundo.
+      </p>
+
+      <form onsubmit="enviarWhatsApp(event)" class="max-w-md mx-auto space-y-4">
+        <input type="email" id="email" class="w-full border rounded-xl p-3" placeholder="Digite seu e-mail aqui"
+          required />
+        <input type="tel" id="phone" pattern="[0-9]{10,11}" inputmode="numeric" class="w-full border rounded-xl p-3"
+          placeholder="Seu Whatsapp (para receber avisos direto no celular)" required />
+        <button type="submit"
+          class="bg-orange-500 text-white px-6 py-3 rounded-xl shadow hover:bg-orange-600 transition w-full font-bold">
+          Quero reservar meu acesso
+        </button>
+
+
+        <button onclick="abrirSuporte()" type="button" id="suporte"
+          class="bg-green-500 text-white px-6 py-2 w-full rounded-xl shadow hover:bg-green-700 transition w-80 font-bold flex items-center justify-center gap-2 text-center">
+          <i class="bx bxl-whatsapp text-2xl"></i>
+          Ou fale conosco no WhatsApp
+        </button>
+        <p class="font-light text-white">
+          Não se preocupe, só vamos te enviar novidades importantes. Nada de
+          spam.
+        </p>
+      </form>
+    </section>
+
+    <section class="mt-16" id="how">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Como funciona</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
+          <span class="text-4xl">📸</span>
+          <p class="font-bold mt-2">1. Envie fotos e dados do seu carro</p>
+        </div>
+        <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
+          <span class="text-4xl">🤖</span>
+          <p class="font-bold mt-2">2. A IA cria a descrição pra você</p>
+        </div>
+        <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
+          <span class="text-4xl">📲</span>
+          <p class="font-bold mt-2">3. Negocie direto pelo WhatsApp</p>
         </div>
       </div>
-    
-      <!-- Menu (mobile only) -->
-      <nav id="menu" class="md:hidden hidden mt-4">
-        <div class="flex justify-center flex-row gap-5 items-center">
-          <a href="#home" class="font-semibold text-orange-500 font-bold">Home</a>
-          <a href="#cta" class="font-semibold hover:text-orange-500">Reserva</a>
-          <a href="#avaliacoes" class="font-semibold hover:text-orange-500">Avaliações</a>
-          <a href="#perguntas" class="font-semibold hover:text-orange-500">Dúvidas</a>
-          <a href="dicas.html" class="font-semibold hover:text-orange-500">Blog</a>
-        </div>
-      </nav>
-    </header>
-    
-    
-    <main class="max-w-6xl mx-auto px-4 py-10">
-      <img
-      src="./imgs/logopng.png"
-      class="w-40 flex justify-center m-auto"
-      alt=""
-    />
-    <br>
-      <section id="home" class="text-center mb-12">
-        <h1 class="text-4xl font-extrabold mb-4">
-          Negocie seu carro em até 5 segundos, sem enrolação!!
-        </h1>
-        <p class="text-lg text-gray-700">
-          Propostas instantâneas, direto pelo WhatsApp. <br> Uma <strong>IA</strong> fazendo a descrição para
-          você.
-        </p>
-      </section>
+    </section>
 
-      <section class="grid md:grid-cols-3 gap-8 mb-16">
-        <div class="p-6 border bg-white rounded-2xl shadow transition hover:shadow-lg">
-          <h2 class="text-xl font-semibold mb-2">
-            Troque, compre ou venda direto com o dono – ou com revendas
-          </h2>
-          <p class="text-gray-600">
-            Negocie com pessoas reais ou revendas homologadas em um ambiente
-            rápido e seguro.
+    <section class="mt-16" id="avaliacoes">
+      <h2 class="text-2xl font-semibold text-center mb-8">
+        O que dizem os usuários
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6 text-gray-800">
+        <div class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer">
+          <p class="mb-4 italic">
+            “Consegui vender meu carro em menos de 2 dias. O processo foi
+            direto, sem enrolação!”
           </p>
+          <p class="font-semibold">– Ana C., São Paulo</p><br>
+
         </div>
-        <div class="p-6 border bg-white rounded-2xl shadow transition hover:shadow-lg">
-          <h2 class="text-xl font-semibold mb-2">
-            Proposta instantânea via WhatsApp
-          </h2>
-          <p class="text-gray-600">
-            Receba ou envie propostas em segundos. Nada de formulários infinitos
-            ou cadastro obrigatório.
+        <div class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer">
+          <p class="mb-4 italic">
+            “A proposta pelo WhatsApp agilizou tudo. Melhor app que já usei
+            pra isso.”
           </p>
+          <p class="font-semibold">– Carlos M., Belo Horizonte</p>
         </div>
-        <div class="p-6 border bg-white rounded-2xl shadow transition hover:shadow-lg">
-          <h2 class="text-xl font-semibold mb-2">
-            Descrição automática com IA
-          </h2>
-          <p class="text-gray-600">
-            A Inteligência Artificial gera a descrição completa do seu carro com
-            base nas fotos e informações.
+        <div class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer">
+          <p class="mb-4 italic">
+            “A IA acertou em cheio na descrição do meu carro. Fiquei
+            impressionado.”
           </p>
+          <p class="font-semibold">– Júlia F., Curitiba</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="bg-gray-900 p-8 rounded-2xl text-center" id="cta">
-        <h2 class="text-2xl font-bold mb-4 text-white">
-          Garanta seu lugar na primeira versão do TINDRA
-        </h2>
-        <p class="text-gray-700 mb-6 text-white">
-          O TINDRA vai revolucionar a forma de negociar carros no Brasil.
-          <br />Deixe seu e-emai e seja um dos primeiros a ter acesso à versão
-          de lançamento. <br />
-          Quem entrar na lista recebe benefícios antecipados e pode até testar o
-          app antes de todo mundo.
-        </p>
+    <section class="mt-16" id="perguntas">
+      <h2 class="text-2xl font-semibold mb-4 text-center">
+        Perguntas Frequentes
+      </h2>
+      <ul class="space-y-4 text-gray-700 text-center my-2">
+        <li>
+          <strong>Preciso dar match para negociar?</strong><br />
+          Não! Basta enviar ou receber uma proposta.
+        </li>
+        <li>
+          <strong>O app é gratuito?</strong><br />
+          Sim, para usuários comuns. Revendas têm planos exclusivos.
+        </li>
+        <li>
+          <strong>Como a IA faz a descrição?</strong><br />
+          A partir de fotos e dados do veículo que você envia.
+        </li>
+      </ul>
+    </section>
 
-        <form
-          onsubmit="enviarWhatsApp(event)"
-          class="max-w-md mx-auto space-y-4"
-        >
-          <input
-            type="email"
-            id="email"
-            class="w-full border rounded-xl p-3"
-            placeholder="Digite seu e-mail aqui"
-            required
-          />
-          <input
-            type="tel"
-            id="phone"
-            pattern="[0-9]{10,11}"
-            inputmode="numeric"
-            class="w-full border rounded-xl p-3"
-            placeholder="Seu Whatsapp (para receber avisos direto no celular)"
-            required
-          />
-          <button
-            type="submit"
-            class="bg-orange-500 text-white px-6 py-3 rounded-xl shadow hover:bg-orange-600 transition w-full font-bold"
-          >
-            Quero reservar meu acesso
-          </button>
-          
-          
-          <button
-            onclick="abrirSuporte()"
-            type="button"
-            id="suporte"
-            class="bg-green-500 text-white px-6 py-2 w-full rounded-xl shadow hover:bg-green-700 transition w-80 font-bold flex items-center justify-center gap-2 text-center"
-          >
-            <i class="bx bxl-whatsapp text-2xl"></i>
-            Ou fale conosco no WhatsApp
-          </button>
-          <p class="font-light text-white">
-            Não se preocupe, só vamos te enviar novidades importantes. Nada de
-            spam.
-          </p>
-        </form>
-      </section>
-
-      <section class="mt-16" id="how">
-        <h2 class="text-2xl font-semibold mb-4 text-center">Como funciona</h2>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-          <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
-            <span class="text-4xl">📸</span>
-            <p class="font-bold mt-2">1. Envie fotos e dados do seu carro</p>
-          </div>
-          <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
-            <span class="text-4xl">🤖</span>
-            <p class="font-bold mt-2">2. A IA cria a descrição pra você</p>
-          </div>
-          <div class="p-6 border rounded-xl bg-gray-400 transition hover:shadow-md cursor-pointer">
-            <span class="text-4xl">📲</span>
-            <p class="font-bold mt-2">3. Negocie direto pelo WhatsApp</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="mt-16" id="avaliacoes">
-        <h2 class="text-2xl font-semibold text-center mb-8">
-          O que dizem os usuários
-        </h2>
-        <div class="grid md:grid-cols-3 gap-6 text-gray-800">
-          <div
-            class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
-          >
-            <p class="mb-4 italic">
-              “Consegui vender meu carro em menos de 2 dias. O processo foi
-              direto, sem enrolação!”
-            </p>
-            <p class="font-semibold">– Ana C., São Paulo</p><br>
-            
-          </div>
-          <div
-            class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
-          >
-            <p class="mb-4 italic">
-              “A proposta pelo WhatsApp agilizou tudo. Melhor app que já usei
-              pra isso.”
-            </p>
-            <p class="font-semibold">– Carlos M., Belo Horizonte</p>
-          </div>
-          <div
-            class="bg-white border border-orange-500 p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer"
-          >
-            <p class="mb-4 italic">
-              “A IA acertou em cheio na descrição do meu carro. Fiquei
-              impressionado.”
-            </p>
-            <p class="font-semibold">– Júlia F., Curitiba</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="mt-16" id="perguntas">
-        <h2 class="text-2xl font-semibold mb-4 text-center">
-          Perguntas Frequentes
-        </h2>
-        <ul class="space-y-4 text-gray-700 text-center my-2">
-          <li>
-            <strong>Preciso dar match para negociar?</strong><br />
-            Não! Basta enviar ou receber uma proposta.
-          </li>
-          <li>
-            <strong>O app é gratuito?</strong><br />
-            Sim, para usuários comuns. Revendas têm planos exclusivos.
-          </li>
-          <li>
-            <strong>Como a IA faz a descrição?</strong><br />
-            A partir de fotos e dados do veículo que você envia.
-          </li>
-        </ul>
-      </section>
-
-      <!-- <section id="planos" class="mt-16">
+    <!-- <section id="planos" class="mt-16">
         <h2 class="text-2xl font-semibold mb-4 text-center">Planos e Assinaturas</h2>
         <div class="grid md:grid-cols-3 gap-6 text-gray-800">
           <div
@@ -309,14 +273,13 @@
         </div>
       </section> -->
 
-    </main>
+  </main>
 
-    <footer
-      class="bg-white border-t mt-16 p-6 text-center text-sm text-gray-500"
-    >
-      © 2025 TINDRA. Todos os direitos reservados.
-    </footer>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./scripts.js"></script>
-  </body>
+  <footer class="bg-white border-t mt-16 p-6 text-center text-sm text-gray-500">
+    © 2025 TINDRA. Todos os direitos reservados.
+  </footer>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./scripts.js"></script>
+</body>
+
 </html>

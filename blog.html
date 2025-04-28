@@ -1,92 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog de Carros</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINDRA | Faça sua proposta em segundos – Troque, compre ou venda carros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-100 font-sans">
 
-  <header class="bg-white shadow p-4 text-center text-2xl font-bold text-gray-800">
-    🚗 Blog Automotivo - Últimas Notícias
-  </header>
+    <header class="bg-white shadow p-4 text-center text-2xl font-bold text-gray-800">
+        🚗 Blog Automotivo - Últimas Notícias
+    </header>
 
-  <main id="news-container" class="max-w-5xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Notícias aqui -->
-  </main>
+    <main id="news-container" class="max-w-5xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Noticias serão aqui inseridas via JavaScript -->
+    </main>
 
-  <!-- Paginação -->
-  <div class="flex justify-center items-center space-x-4 my-6">
-    <button id="prevBtn" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50"
-      disabled>Anterior</button>
-    <span id="pageIndicator" class="font-medium text-gray-700">Página 1</span>
-    <button id="nextBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Próxima</button>
-  </div>
+    <!-- Paginação -->
+    <div class="flex justify-center items-center space-x-4 my-6">
+        <button id="prevBtn" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50" disabled>Anterior</button>
+        <span id="pageIndicator" class="font-medium text-gray-700">Página 1</span>
+        <button id="nextBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Próxima</button>
+    </div>
 
-  <script>
-    const API_KEY = 'c7db1e5058704d529d4d7c48c1a0a927';
-    let currentPage = 1;
-    const container = document.getElementById('news-container');
+    <script>
+        const newsData = [
+            { imgSrc: './imgs/01.webp', title: 'Confira a lista dos carros novos mais vendidos no primeiro trimestre de 2025', desc: 'Fenabrave divulga lista dos carros novos mais vendidos entre janeiro e março de 2025 e projeções para o ano.', link: 'https://olhardigital.com.br/2025/04/06/carros-e-tecnologia/confira-a-lista-dos-carros-novos-mais-vendidos-no-primeiro-trimestre-de-2025/' },
+            { imgSrc: './imgs/02.jpg', title: 'Carros elétricos: esse lugar já tem mais carregadores que bombas de gasolina', desc: 'Com a crescente adoção de carros elétricos, o estado da Califórnia se destaca pelas várias instalações de infraestrutura de carregamento.', link: 'https://olhardigital.com.br/2025/04/04/carros-e-tecnologia/carros-eletricos-esse-lugar-ja-tem-mais-carregadores-que-bombas-de-gasolina/' },
+            { imgSrc: './imgs/03.jpg', title: 'Carros elétricos podem piorar problema que eles deveriam resolver', desc: 'Pesquisadores revelaram que os carros elétricos podem piorar as emissões de CO₂, a menos que sejam movidos a energias renováveis.', link: 'https://olhardigital.com.br/2025/04/06/carros-e-tecnologia/confira-a-lista-dos-carros-novos-mais-vendidos-no-primeiro-trimestre-de-2025/' },
+            { imgSrc: './imgs/04.jpg', title: 'Gigante automotiva domina lista dos carros mais seguros do Brasil', desc: 'A segurança é crucial na hora de escolher um carro, e no Brasil, alguns modelos se destacam por oferecerem proteção de ponta para motoristas e passageiros.', link: 'https://olhardigital.com.br/2025/04/14/carros-e-tecnologia/gigante-automotiva-domina-lista-dos-carros-mais-seguros-do-brasil/' },
+            { imgSrc: './imgs/05.png', title: '8 carros icônicos da Chevrolet que fizeram história no Brasil', desc: 'Lista conta com veículos lançados desde os anos 1920 até carros mais atuais, que estrearam no mercado nos anos 2000.', link: 'https://olhardigital.com.br/2025/04/23/carros-e-tecnologia/8-carros-iconicos-da-chevrolet-que-fizeram-historia-no-brasil/' },
+            { imgSrc: './imgs/06.jpg', title: 'Tesla perde vendas até no "paraíso" dos carros elétricos', desc: 'A montadora de Elon Musk vê seus números caírem na Noruega, país onde a adoção por carros elétricos é massiva.', link: 'https://olhardigital.com.br/2025/04/02/carros-e-tecnologia/tesla-perde-vendas-ate-no-paraiso-dos-carros-eletricos/' },
+            { imgSrc: './imgs/07.jpg', title: 'Como os criminosos clonam as placas de carros e motos?', desc: 'Descubra como criminosos clonam placas de carros e motos, quais são os riscos para o verdadeiro dono e o que fazer se for vítima desse golpe.', link: 'https://olhardigital.com.br/2025/04/14/carros-e-tecnologia/como-os-criminosos-clonam-as-placas-de-carros-e-motos/' },
+            { imgSrc: './imgs/08.png', title: 'Entenda de vez as diferenças entre carros híbridos: leve, convencional e plug-in', desc: 'Descubra as diferenças entre os carros híbridos e saiba qual modelo se adapta melhor ao seu estilo de direção e necessidades.', link: 'https://olhardigital.com.br/2025/03/27/carros-e-tecnologia/entenda-de-vez-as-diferencas-entre-carros-hibridos-leve-convencional-e-plug-in/' },
+            { imgSrc: './imgs/09.jpg', title: 'Top 5 carros da BYD que você precisa conhecer', desc: 'BYD é uma montadora chinesa de veículos que tem ocupado um espaço cada vez maior no Brasil e no mundo; confira alguns carros da marca', link: 'https://olhardigital.com.br/2025/04/10/carros-e-tecnologia/top-5-carros-da-byd-que-voce-precisa-conhecer/' }
+        ];
 
-    function loadNews(page = 1) {
-      container.innerHTML = '<p class="col-span-full text-center text-gray-600">Carregando...</p>';
+        let currentPage = 1;
+        const newsPerPage = 3;
 
-      fetch(`https://newsapi.org/v2/everything?q=carros&apiKey=${API_KEY}&page=${page}&pageSize=9`)
-        .then(res => res.json())
-        .then(data => {
-          console.log('🧾 Resposta da API:', data); // Adicionando o log para verificar a resposta
+        function renderNews() {
+            const newsContainer = document.getElementById('news-container');
+            const startIndex = (currentPage - 1) * newsPerPage;
+            const endIndex = currentPage * newsPerPage;
+            const currentNews = newsData.slice(startIndex, endIndex);
 
-          if (!data.articles || data.articles.length === 0) {
-            container.innerHTML = '<p class="col-span-full text-center text-gray-600">Nenhuma notícia encontrada.</p>';
-            return;
-          }
+            newsContainer.innerHTML = '';
+            currentNews.forEach(news => {
+                const newsElement = `
+                    <div class="flex flex-col bg-white">
+                        <img src="${news.imgSrc}" class="w-full rounded h-48 object-cover" alt="Imagem da notícia">
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h2 class="text-lg font-semibold mb-2">${news.title}</h2>
+                            <p class="text-sm text-gray-600 flex-grow">${news.desc}</p>
+                            <a href="${news.link}" target="_blank"
+                                class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm text-center">
+                                Ler mais
+                            </a>
+                        </div>
+                    </div>
+                `;
+                newsContainer.innerHTML += newsElement;
+            });
 
-          container.innerHTML = '';
-          data.articles.forEach(article => {
-            const card = document.createElement('div');
-            card.className = "bg-white rounded-lg overflow-hidden shadow-md flex flex-col";
+            // Atualizando o indicador de página
+            document.getElementById('pageIndicator').innerText = `Página ${currentPage}`;
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage * newsPerPage >= newsData.length;
+        }
 
-            card.innerHTML = `
-      <img src="${article.urlToImage || 'https://via.placeholder.com/400x200?text=Sem+Imagem'}" class="w-full h-48 object-cover" alt="Imagem da notícia">
-      <div class="p-4 flex flex-col flex-grow">
-        <h2 class="text-lg font-semibold mb-2">${article.title}</h2>
-        <p class="text-sm text-gray-600 flex-grow">${article.description || 'Sem descrição disponível.'}</p>
-        <a href="${article.url}" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm text-center">
-          Ler mais
-        </a>
-      </div>
-    `;
-            container.appendChild(card);
-          });
+        
 
-          prevBtn.disabled = currentPage === 1;
-          nextBtn.disabled = currentPage >= data.totalResults / 10; // Limite de 10 por página
-        })
-        .catch(error => {
-          console.error('Erro ao carregar notícias:', error);
-          container.innerHTML = `<p class="text-red-600 col-span-full text-center">Erro ao carregar notícias.</p>`;
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderNews();
+            }
         });
 
-    }
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentPage * newsPerPage < newsData.length) {
+                currentPage++;
+                renderNews();
+            }
+        });
 
-    prevBtn.addEventListener('click', () => {
-      if (currentPage > 1) {
-        loadNews(currentPage - 1);
-      }
-    });
-
-    nextBtn.addEventListener('click', () => {
-      loadNews(currentPage + 1);
-    });
-
-    loadNews(currentPage);
-  </script>
-
-
-
+        // Inicializa a renderização da primeira página
+        renderNews();
+    </script>
 
 </body>
 
